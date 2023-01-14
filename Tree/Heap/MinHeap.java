@@ -72,7 +72,7 @@ public class MinHeap {
                 i = par;
 
             } else {
-                return;
+                return ;
             }
         }
 
