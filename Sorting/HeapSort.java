@@ -84,7 +84,7 @@ public class MinHeap {
 }
 
 class Solution {
-    public static void bubbleSort(int a[], int n) {
+    public static void heapSort(int a[], int n) {
         MinHeap heap = new MinHeap(n);
         for (int i = 0; i < n; i++) {
             heap.insertKey(a[i]);

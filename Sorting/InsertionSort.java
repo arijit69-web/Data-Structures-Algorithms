@@ -3,7 +3,7 @@ Link : https://practice.geeksforgeeks.org/problems/bubble-sort/1
 */
 
 class Solution {
-    public static void bubbleSort(int a[], int n) {
+    public static void insertionSort(int a[], int n) {
         for (int i = 1; i < n; i++) {
             int hole = i;
             int value = a[i];

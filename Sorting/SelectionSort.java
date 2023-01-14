@@ -3,7 +3,7 @@ Link : https://practice.geeksforgeeks.org/problems/bubble-sort/1
 */
 
 class Solution {
-    public static void bubbleSort(int a[], int n) {
+    public static void selectionSort(int a[], int n) {
         for (int i = 0; i < n; i++) {
             int imin = i;
             for (int j = i + 1; j < n; j++) {
