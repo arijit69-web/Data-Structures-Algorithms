@@ -1,4 +1,3 @@
-
 public class MaxHeap {
     int[] harr;
     int capacity;
