@@ -1,7 +1,5 @@
 /*
-
 Link : https://leetcode.com/problems/n-queens/description/
-
 */
 class Solution {
     public List<List<String>> solveNQueens(int n) {
