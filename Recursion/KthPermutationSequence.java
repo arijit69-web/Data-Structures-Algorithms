@@ -3,7 +3,6 @@ Link : https://leetcode.com/problems/permutation-sequence/description/
 */
 public class Solution {
     public String getPermutation(int n, int k) {
-        int pos = 0;
         List<Integer> numbers = new ArrayList<>();
         int[] factorial = new int[n + 1];
         StringBuilder sb = new StringBuilder();
