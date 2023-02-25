@@ -29,7 +29,6 @@ class Solution {
             newStart.add(i);
             map.put(preSum, newStart);
         }
-        System.out.println(map);
         if (!flag)
             System.out.println("No Elemets found in the array");
     }
