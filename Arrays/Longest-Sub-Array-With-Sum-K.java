@@ -1,7 +1,11 @@
+/*
+Link : https://practice.geeksforgeeks.org/problems/longest-sub-array-with-sum-k0809/1?utm_source=youtube&utm_medium=collab_striver_ytdescription&utm_campaign=longest-sub-array-with-sum-k
+*/
 class Solution {
 
-    public static void findAllSubArr(int input[], int n, int k) {
-
+    // Function for finding maximum and value pair
+    public static int lenOfLongSubarr(int input[], int n, int k) {
+        int max = 0;
         Map<Integer, List<Integer>> map = new HashMap<Integer, List<Integer>>();
         boolean flag = false;
         List<Integer> initial = new ArrayList<Integer>();
@@ -11,11 +15,11 @@ class Solution {
 
         for (int i = 0; i < input.length; i++) {
             preSum += input[i];
-            if (map.containsKey(preSum - k)) { 
+            if (map.containsKey(preSum - k)) {
                 List<Integer> startIndices = map.get(preSum - k);
                 for (int start : startIndices) {
                     flag = true;
-                    System.out.println("Start: " + (start + 1) + "\tEnd: " + i);
+                    max = Math.max(max, i - (start + 1) + 1);
                 }
             }
 
@@ -27,15 +31,9 @@ class Solution {
             map.put(preSum, newStart);
         }
         if (!flag)
-            System.out.println("No Elemets found in the array");
+            return 0;
+
+        return max;
     }
 
-    public static void main(String[] args) {
-
-        int arr[] = { 0, 0, 1, 2, 3, 0, 0 };
-        int n = arr.length;
-        int K = 6;
-        findAllSubArr(arr, n, K);
-
-    }
 }
