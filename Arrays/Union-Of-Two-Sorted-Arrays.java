@@ -3,18 +3,45 @@ Link : https://practice.geeksforgeeks.org/problems/union-of-two-sorted-arrays-15
 */
 class Solution {
     public static ArrayList<Integer> findUnion(int arr1[], int arr2[], int n, int m) {
+        ArrayList<Integer> ans = new ArrayList<>();
 
-        TreeMap<Integer, Integer> ans = new TreeMap<>();
-        for (int i = 0; i < n; i++) {
-            ans.put(arr1[i], 0);
+        int i = 0, j = 0;
 
+        while (i < n && j < m) {
+            int x = arr1[i];
+            int y = arr2[j];
+
+            if (x < y) {
+                ans.add(x);
+                while (i < n && arr1[i] == x)
+                    i++;
+            } else if (x == y) {
+                ans.add(x);
+                while (i < n && arr1[i] == x)
+                    i++;
+                while (j < m && arr2[j] == y)
+                    j++;
+            } else {
+                ans.add(y);
+                while (j < m && arr2[j] == y)
+                    j++;
+            }
         }
-        for (int i = 0; i < m; i++) {
-            ans.put(arr2[i], 0);
 
+        while (i < n) {
+            int x = arr1[i];
+            ans.add(x);
+            while (i < n && arr1[i] == x)
+                i++;
         }
-        ArrayList<Integer> listOfKeys = new ArrayList<Integer>(ans.keySet());
-        return listOfKeys;
 
+        while (j < m) {
+            int y = arr2[j];
+            ans.add(y);
+            while (j < m && arr2[j] == y)
+                j++;
+        }
+
+        return ans;
     }
 }
